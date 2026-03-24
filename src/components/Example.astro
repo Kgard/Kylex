@@ -1,0 +1,65 @@
+---
+---
+
+<section class="py-20 px-6 bg-slate-50">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold text-[#0C447C] mb-4 text-center">Not a git log. A handoff note.</h2>
+    <p class="text-slate-500 text-center mb-10">This is what <code class="text-sm bg-white px-1.5 py-0.5 rounded font-mono border border-slate-200">.lodestar.md</code> looks like — the kind of note a thoughtful colleague would write after watching your session.</p>
+
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-200">
+        <div class="flex gap-1.5">
+          <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+          <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+          <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+        </div>
+        <span class="text-xs text-slate-400 font-mono ml-2">.lodestar.md</span>
+      </div>
+      <div class="p-6 font-mono text-sm leading-relaxed text-slate-700 overflow-x-auto">
+        <div class="text-slate-400 text-xs mb-4"># Lodestar Context</div>
+        <div class="mb-6">
+          <div class="text-[#185FA5] font-semibold mb-2">## Decisions</div>
+          <div class="ml-4 space-y-3">
+            <div>
+              <div class="font-semibold">Switched from REST to tRPC for the API layer</div>
+              <div class="text-slate-500 text-xs">Rationale: Type safety end-to-end without code generation. Simpler DX for a solo founder.</div>
+            </div>
+            <div>
+              <div class="font-semibold">Onboarding flow: email-first, not social auth</div>
+              <div class="text-slate-500 text-xs">Rationale: Target users are developers — they distrust OAuth popups. Email + magic link converts 2x better in our persona.</div>
+            </div>
+            <div>
+              <div class="font-semibold">Ship free tier before Pro — no paywall at launch</div>
+              <div class="text-slate-500 text-xs">Rationale: Community trust and adoption rate matter more than early revenue. Gate Pro features, not the core tool.</div>
+            </div>
+            <div>
+              <div class="font-semibold">Added Drizzle ORM instead of Prisma</div>
+              <div class="text-slate-500 text-xs">Rationale: Prisma's cold start time was adding 2-3s to serverless invocations.</div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-[#185FA5] font-semibold mb-2">## Rejected Approaches</div>
+          <div class="ml-4 space-y-3">
+            <div>
+              <div class="font-semibold">Prisma ORM</div>
+              <div class="text-slate-500 text-xs">Reason: Binary dependency caused 2-3s cold starts on Vercel serverless.</div>
+            </div>
+            <div>
+              <div class="font-semibold">Multi-step onboarding wizard</div>
+              <div class="text-slate-500 text-xs">Reason: Tested a 3-step flow — 40% drop-off at step 2. Replaced with single-screen setup.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="text-[#185FA5] font-semibold mb-2">## Open Questions</div>
+          <div class="ml-4 space-y-1">
+            <div class="text-xs"><span class="text-red-500 font-bold">[BLOCKING]</span> Drizzle push or migrate workflow for production?</div>
+            <div class="text-xs"><span class="text-slate-400">[non-blocking]</span> Should the dashboard show usage analytics to free users?</div>
+            <div class="text-xs"><span class="text-slate-400">[non-blocking]</span> Landing page hero: illustration vs terminal screenshot?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
