@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Getting Started — Lodestar" description="Set up Lodestar in under 2 minutes. Works with Claude Code, Cursor, and VS Code.">
+  <Nav />
+  <main class="pt-20">
+    <!-- Header -->
+    <section class="py-16 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-[#0C447C] mb-4">Getting Started</h1>
+        <p class="text-lg text-slate-500">Up and running in under 2 minutes. Pick your tool.</p>
+      </div>
+    </section>
+
+    <!-- Tool selector -->
+    <section class="px-6 pb-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex justify-center gap-2 mb-10">
+          <button onclick="switchTool('claude')" class="tool-tab active" id="tab-claude">Claude Code</button>
+          <button onclick="switchTool('cursor')" class="tool-tab" id="tab-cursor">Cursor</button>
+          <button onclick="switchTool('vscode')" class="tool-tab" id="tab-vscode">VS Code</button>
+        </div>
+
+        <!-- Claude Code -->
+        <div id="tool-claude" class="tool-content active">
+          <div class="space-y-12">
+
+            <!-- Step 1: Install -->
+            <div class="flex gap-6 items-start">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#185FA5] text-white flex items-center justify-center font-bold text-sm">1</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-[#0C447C] mb-2">Install Lodestar</h3>
+                <p class="text-slate-500 text-sm mb-4">Choose your preferred install method:</p>
+                <div class="space-y-3">
+                  <div class="bg-slate-900 rounded-lg p-4">
+                    <div class="text-xs text-slate-500 mb-1">npm (recommended)</div>
+                    <code class="text-sm text-green-400 font-mono">npm install -g lodestar</code>
+                  </div>
+                  <div class="bg-slate-900 rounded-lg p-4">
+                    <div class="text-xs text-slate-500 mb-1">Homebrew</div>
+                    <code class="text-sm text-green-400 font-mono">brew install lodestar</code>
+                  </div>
+                  <div class="bg-slate-900 rounded-lg p-4">
+                    <div class="text-xs text-slate-500 mb-1">Binary</div>
+                    <code class="text-sm text-green-400 font-mono">curl -fsSL kylex.io/install | sh</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Init -->
+            <div class="flex gap-6 items-start">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#185FA5] text-white flex items-center justify-center font-bold text-sm">2</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-[#0C447C] mb-2">Run the setup wizard</h3>
+                <p class="text-slate-500 text-sm mb-4">The wizard configures your AI provider and auto-connects to Claude Code:</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                  <code class="text-sm text-green-400 font-mono">lodestar init</code>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-5 text-sm space-y-3">
+                  <div class="font-mono text-xs text-slate-500">
+                    <div class="text-[#185FA5] font-semibold mb-2">The wizard will:</div>
+                    <div class="space-y-2 text-slate-600">
+                      <div class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Ask which AI provider you use (Anthropic, OpenAI, or Ollama)</div>
+                      <div class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Walk you through API key setup</div>
+                      <div class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Validate your key with a test call</div>
+                      <div class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Auto-configure Claude Code's MCP settings</div>
+                      <div class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Offer to bootstrap your existing project</div>
+                      <div class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Install git hooks (optional)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Use it -->
+            <div class="flex gap-6 items-start">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#185FA5] text-white flex items-center justify-center font-bold text-sm">3</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-[#0C447C] mb-2">Start using it</h3>
+                <p class="text-slate-500 text-sm mb-4">Three commands — that's the entire workflow:</p>
+                <div class="space-y-4">
+                  <div class="bg-slate-900 rounded-lg p-4">
+                    <div class="text-xs text-slate-500 mb-1">Start of session — load previous context</div>
+                    <code class="text-sm text-green-400 font-mono">lodestar start</code>
+                    <div class="text-xs text-slate-500 mt-2">Or just tell Claude: <span class="text-slate-400 italic">"lodestar start"</span></div>
+                  </div>
+                  <div class="bg-slate-900 rounded-lg p-4">
+                    <div class="text-xs text-slate-500 mb-1">Mid-session — save a checkpoint</div>
+                    <code class="text-sm text-green-400 font-mono">lodestar save</code>
+                    <div class="text-xs text-slate-500 mt-2">You'll be prompted for optional notes. Hit Enter to skip.</div>
+                  </div>
+                  <div class="bg-slate-900 rounded-lg p-4">
+                    <div class="text-xs text-slate-500 mb-1">End of session — synthesize + commit</div>
+                    <code class="text-sm text-green-400 font-mono">lodestar end</code>
+                    <div class="text-xs text-slate-500 mt-2">Synthesizes context, commits <code class="text-green-400">.lodestar.md</code>, done.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Review -->
+            <div class="flex gap-6 items-start">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#185FA5] text-white flex items-center justify-center font-bold text-sm">4</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-[#0C447C] mb-2">Review your project dashboard</h3>
+                <p class="text-slate-500 text-sm mb-4">See your project status, decisions, and architecture at a glance:</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                  <code class="text-sm text-green-400 font-mono">lodestar review</code>
+                </div>
+                <p class="text-xs text-slate-400">Opens a browser-based dashboard with feature progress, decisions, patterns, and Mermaid architecture diagrams.</p>
+              </div>
+            </div>
+
+            <!-- Optional: Git hooks -->
+            <div class="flex gap-6 items-start">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-sm">+</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-[#0C447C] mb-2">Optional: Install git hooks</h3>
+                <p class="text-slate-500 text-sm mb-4">Auto-update feature status on every commit (no LLM cost). Commit <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">.lodestar.md</code> on push.</p>
+                <div class="bg-slate-900 rounded-lg p-4">
+                  <code class="text-sm text-green-400 font-mono">lodestar hooks</code>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Cursor -->
+        <div id="tool-cursor" class="tool-content">
+          <div class="text-center py-16">
+            <div class="inline-flex items-center gap-2 text-sm font-medium text-[#185FA5] bg-[#E6F1FB] px-4 py-2 rounded-full mb-4">Coming Soon</div>
+            <h3 class="text-xl font-semibold text-[#0C447C] mb-3">Cursor Integration</h3>
+            <p class="text-slate-500 max-w-md mx-auto">Lodestar works with Cursor today via MCP. A dedicated guide with Cursor-specific setup is coming soon.</p>
+            <div class="mt-6 bg-slate-900 rounded-lg p-4 inline-block">
+              <div class="text-xs text-slate-500 mb-1">Works now — manual MCP config</div>
+              <code class="text-sm text-green-400 font-mono">lodestar init</code>
+              <div class="text-xs text-slate-500 mt-1">Select Cursor during tool setup</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VS Code -->
+        <div id="tool-vscode" class="tool-content">
+          <div class="text-center py-16">
+            <div class="inline-flex items-center gap-2 text-sm font-medium text-[#185FA5] bg-[#E6F1FB] px-4 py-2 rounded-full mb-4">Coming Soon</div>
+            <h3 class="text-xl font-semibold text-[#0C447C] mb-3">VS Code Extension</h3>
+            <p class="text-slate-500 max-w-md mx-auto">A VS Code extension with sidebar integration, inline context display, and one-click synthesis is in development.</p>
+            <p class="text-sm text-slate-400 mt-4">Want early access? <a href="/#pro" class="text-[#185FA5] hover:underline">Join Pro Early Access</a></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- All commands reference -->
+    <section class="py-16 px-6 bg-slate-50">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-xl font-semibold text-[#0C447C] mb-6 text-center">All Commands</h2>
+        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-50 border-b border-slate-200">
+                <th class="text-left px-5 py-3 font-medium text-slate-500">Command</th>
+                <th class="text-left px-5 py-3 font-medium text-slate-500">What it does</th>
+                <th class="text-left px-5 py-3 font-medium text-slate-500 hidden sm:table-cell">Cost</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr><td class="px-5 py-3 font-mono text-xs text-[#185FA5]">lodestar init</td><td class="px-5 py-3 text-slate-600">First-time setup wizard</td><td class="px-5 py-3 text-slate-400 hidden sm:table-cell">Free</td></tr>
+              <tr><td class="px-5 py-3 font-mono text-xs text-[#185FA5]">lodestar start</td><td class="px-5 py-3 text-slate-600">Load previous session context</td><td class="px-5 py-3 text-slate-400 hidden sm:table-cell">Free</td></tr>
+              <tr><td class="px-5 py-3 font-mono text-xs text-[#185FA5]">lodestar save</td><td class="px-5 py-3 text-slate-600">Mid-session checkpoint (full synthesis)</td><td class="px-5 py-3 text-slate-400 hidden sm:table-cell">~$0.01</td></tr>
+              <tr><td class="px-5 py-3 font-mono text-xs text-[#185FA5]">lodestar end</td><td class="px-5 py-3 text-slate-600">Synthesize + commit — end session</td><td class="px-5 py-3 text-slate-400 hidden sm:table-cell">~$0.01</td></tr>
+              <tr><td class="px-5 py-3 font-mono text-xs text-[#185FA5]">lodestar review</td><td class="px-5 py-3 text-slate-600">Open project dashboard in browser</td><td class="px-5 py-3 text-slate-400 hidden sm:table-cell">Free</td></tr>
+              <tr><td class="px-5 py-3 font-mono text-xs text-[#185FA5]">lodestar bootstrap</td><td class="px-5 py-3 text-slate-600">Capture existing project structure</td><td class="px-5 py-3 text-slate-400 hidden sm:table-cell">Free</td></tr>
+              <tr><td class="px-5 py-3 font-mono text-xs text-[#185FA5]">lodestar hooks</td><td class="px-5 py-3 text-slate-600">Install git hooks (auto-update on commit)</td><td class="px-5 py-3 text-slate-400 hidden sm:table-cell">Free</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-slate-400 mt-3 text-center">All commands default to the current directory. No path needed.</p>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .tool-tab {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: white;
+    transition: all 0.15s;
+  }
+  .tool-tab:hover { color: #0C447C; border-color: #185FA5; }
+  .tool-tab.active { color: white; background: #185FA5; border-color: #185FA5; }
+  .tool-content { display: none; }
+  .tool-content.active { display: block; }
+</style>
+
+<script>
+  function switchTool(name) {
+    document.querySelectorAll('.tool-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tool-content').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + name)?.classList.add('active');
+    document.getElementById('tool-' + name)?.classList.add('active');
+  }
+  // Make it global for onclick
+  (window as any).switchTool = switchTool;
+</script>
