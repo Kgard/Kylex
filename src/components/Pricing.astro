@@ -4,21 +4,25 @@
 <section id="pricing" class="py-20 px-6">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl sm:text-3xl font-bold text-[#0C447C] mb-4 text-center">Free forever. Pro when you're ready.</h2>
-    <p class="text-slate-500 text-center mb-12">Lodestar Free does everything a solo developer needs. Kylex Pro adds team and multi-project intelligence.</p>
+    <p class="text-slate-500 text-center mb-12">Lodestar Free gives you full synthesis power with your own API key. Lodestar Pro removes the key requirement and adds workflow automation.</p>
 
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Free -->
-      <div class="rounded-xl border border-slate-200 p-8">
+      <div class="rounded-xl border border-slate-200 p-8 flex flex-col">
         <div class="text-sm font-medium text-[#185FA5] mb-2">Lodestar Free</div>
         <div class="text-3xl font-bold text-[#0C447C] mb-1">$0</div>
-        <div class="text-sm text-slate-400 mb-6">Forever. No limits.</div>
-        <ul class="space-y-3 text-sm text-slate-600 mb-8">
-          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Session context capture</li>
-          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Portable .md synthesis</li>
+        <div class="text-sm text-slate-400 mb-6">Forever. Bring your own API key.</div>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8 flex-1">
+          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Full session context synthesis</li>
+          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Portable .lodestar.md output</li>
           <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Warm cold-starts</li>
-          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Single-project drift detection</li>
+          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Project dashboard (lodestar review)</li>
           <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Works with Claude Code, Cursor, Windsurf</li>
-          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Local only — your data stays on your machine</li>
+          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> BYOK — your API key, your data, local only</li>
+          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> 3-file session history</li>
+          <li class="flex gap-2 text-slate-400"><span>&#x2717;</span> No session diff comparison</li>
+          <li class="flex gap-2 text-slate-400"><span>&#x2717;</span> No mid-session checkpoints</li>
+          <li class="flex gap-2 text-slate-400"><span>&#x2717;</span> No hosted synthesis</li>
         </ul>
         <a href="/getting-started" class="block w-full text-center px-6 py-3 bg-[#185FA5] text-white font-medium rounded-lg hover:bg-[#0C447C] transition-colors">
           Download Free
@@ -26,23 +30,31 @@
       </div>
 
       <!-- Pro -->
-      <div class="rounded-xl border-2 border-[#185FA5] p-8 relative">
+      <div class="rounded-xl border-2 border-[#185FA5] p-8 relative flex flex-col">
         <div class="absolute -top-3 right-6 text-xs font-medium text-white bg-[#185FA5] px-3 py-1 rounded-full">Coming Soon</div>
-        <div class="text-sm font-medium text-[#185FA5] mb-2">Kylex Pro</div>
-        <div class="text-3xl font-bold text-[#0C447C] mb-1">Early Access</div>
-        <div class="text-sm text-slate-400 mb-6">Founding member pricing — be first to know.</div>
-        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+        <div class="text-sm font-medium text-[#185FA5] mb-2">Lodestar Pro</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <div class="text-3xl font-bold text-[#0C447C]">$9.99</div>
+          <div class="text-sm text-slate-400">/month</div>
+        </div>
+        <div class="text-sm text-slate-400 mb-6">200 synthesis calls included. No API key needed.</div>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8 flex-1">
           <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Everything in Free</li>
-          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Cross-device / cloud sync</li>
+          <li class="flex gap-2"><span class="text-[#185FA5] font-semibold">&#10003;</span> <strong>Hosted synthesis — no API key needed</strong></li>
+          <li class="flex gap-2"><span class="text-[#185FA5] font-semibold">&#10003;</span> <strong>Mid-session checkpoints</strong></li>
+          <li class="flex gap-2"><span class="text-[#185FA5] font-semibold">&#10003;</span> <strong>Session diff comparison (--diff)</strong></li>
+          <li class="flex gap-2"><span class="text-[#185FA5] font-semibold">&#10003;</span> <strong>30-day session history</strong></li>
+          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> 200 calls/month included</li>
           <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Multi-project drift detection</li>
-          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Kylex suite: Kite + Gangway + Pharos</li>
+          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Suite integration (coming)</li>
           <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Priority support</li>
-          <li class="flex gap-2"><span class="text-[#185FA5]">&#10003;</span> Team features (coming)</li>
         </ul>
         <a href="#pro" class="block w-full text-center px-6 py-3 border-2 border-[#185FA5] text-[#185FA5] font-medium rounded-lg hover:bg-[#E6F1FB] transition-colors">
-          Join Early Access
+          Join Early Access — founding member rate
         </a>
       </div>
     </div>
+
+    <p class="text-xs text-slate-400 text-center mt-6">Pro pricing shown is target — founding members get a discounted rate. All synthesis output is yours — cancel anytime, keep your .lodestar.md files.</p>
   </div>
 </section>

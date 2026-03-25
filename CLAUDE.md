@@ -12,7 +12,9 @@ A marketing landing page for Lodestar (Kylex Module 00) that introduces the prod
 
 **Lodestar** is a CLI + MCP tool that captures coding session context and synthesizes portable `.lodestar.md` artifacts for warm cold-starts. Free forever.
 
-**Kylex Pro** is the upsell tier (subscription, pricing TBD) with cross-device sync, suite integration, and priority support.
+**Kylex Pro** ($9.99/month) — Kylex-hosted synthesis (no API key needed), mid-session checkpoints, session diff comparison, 30-day history, 200 calls/month, multi-project drift detection, suite integration, priority support.
+
+**Gating strategy:** Capability gating, not content gating. Free users see all synthesis output. Pro gates features that require server-side infrastructure — hosted synthesis, checkpoints, diff panel, extended history. Content blur was rejected (bypassed by reading local file). The `.lodestar.md` file is always fully accessible.
 
 ---
 
