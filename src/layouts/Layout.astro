@@ -38,5 +38,20 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://kylex.io");
   </head>
   <body class="bg-white text-slate-900 antialiased">
     <slot />
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-10 h-10 bg-[#185FA5] text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 hover:bg-[#0C447C] z-50" aria-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    <script>
+      const btn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          btn?.classList.remove('opacity-0', 'pointer-events-none');
+          btn?.classList.add('opacity-100');
+        } else {
+          btn?.classList.add('opacity-0', 'pointer-events-none');
+          btn?.classList.remove('opacity-100');
+        }
+      });
+    </script>
   </body>
 </html>
