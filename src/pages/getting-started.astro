@@ -4,7 +4,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Getting Started — Lodestar" description="Set up Lodestar in under 2 minutes. Works with Claude Code, Cursor, and VS Code.">
+<Layout title="Get Started — Lodestar" description="Set up Lodestar in under 2 minutes. Works with Claude Code. Cursor and VS Code extensions coming soon.">
   <Nav />
   <main class="pt-20">
     <!-- Header -->
@@ -20,8 +20,8 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-3xl mx-auto">
         <div class="flex justify-center gap-2 mb-10">
           <button onclick="switchTool('claude')" class="tool-tab active" id="tab-claude">Claude Code</button>
-          <button onclick="switchTool('cursor')" class="tool-tab" id="tab-cursor">Cursor</button>
-          <button onclick="switchTool('vscode')" class="tool-tab" id="tab-vscode">VS Code</button>
+          <button disabled class="tool-tab opacity-50 cursor-not-allowed" id="tab-cursor">Cursor <span class="text-xs text-slate-400">· coming soon</span></button>
+          <button disabled class="tool-tab opacity-50 cursor-not-allowed" id="tab-vscode">VS Code <span class="text-xs text-slate-400">· coming soon</span></button>
         </div>
 
         <!-- Claude Code -->
