@@ -3,78 +3,70 @@
 
 <section class="py-20 px-6 bg-slate-50">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-2xl sm:text-3xl font-bold text-[#0C447C] mb-4 text-center">See what Lodestar produces.</h2>
-    <p class="text-slate-500 text-center mb-12 max-w-2xl mx-auto">A project dashboard and a portable context file — synthesized automatically from your coding sessions.</p>
+    <h2 class="text-2xl sm:text-3xl font-bold text-[#0C447C] mb-4 text-center">Your reasoning, committed to your repo.</h2>
+    <p class="text-slate-500 text-center mb-12 max-w-2xl mx-auto">Lodestar captures the thinking behind your code — decisions, dead ends, and direction — and gives you two ways to see it.</p>
 
     <div class="grid lg:grid-cols-2 gap-6 items-start">
       <!-- Dashboard screenshot -->
       <div>
         <div class="text-xs font-medium text-[#185FA5] mb-3 uppercase tracking-wide">Project Dashboard</div>
         <div class="rounded-xl border border-slate-200 shadow-sm overflow-hidden bg-white">
-          <img src="/dashboard.png" alt="Lodestar project status dashboard showing feature completion, decisions, and session context" class="w-full" loading="lazy" />
+          <img src="/dashboard.png" alt="Lodestar project dashboard showing build status, architecture, and session decisions" class="w-full" loading="lazy" />
         </div>
-        <p class="text-xs text-slate-400 mt-2"><code class="font-mono bg-slate-100 px-1 py-0.5 rounded">lodestar review</code></p>
+        <p class="text-xs text-slate-400 mt-2">Build status, architecture, decisions — at a glance</p>
       </div>
 
-      <!-- .lodestar.md example -->
+      <!-- Session context preview -->
       <div>
-        <div class="text-xs font-medium text-[#185FA5] mb-3 uppercase tracking-wide">Session Context File</div>
+        <div class="text-xs font-medium text-[#185FA5] mb-3 uppercase tracking-wide">What Gets Captured</div>
         <div class="rounded-xl border border-slate-200 shadow-sm overflow-hidden bg-white">
-          <div class="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-200">
-            <div class="flex gap-1.5">
-              <div class="w-3 h-3 rounded-full bg-slate-200"></div>
-              <div class="w-3 h-3 rounded-full bg-slate-200"></div>
-              <div class="w-3 h-3 rounded-full bg-slate-200"></div>
-            </div>
-            <span class="text-xs text-slate-400 font-mono ml-2">.lodestar.md</span>
-          </div>
-          <div class="p-5 font-mono text-xs leading-relaxed text-slate-700 overflow-y-auto max-h-[600px]">
-            <div class="text-slate-400 mb-3"># Lodestar Context</div>
-            <div class="mb-5">
-              <div class="text-[#185FA5] font-semibold mb-2">## Decisions</div>
-              <div class="ml-3 space-y-2.5">
-                <div>
-                  <div class="font-semibold">Switched from REST to tRPC</div>
-                  <div class="text-slate-500">Rationale: Type safety end-to-end. Simpler DX for a solo founder.</div>
+          <div class="p-5 space-y-5">
+            <div>
+              <div class="text-sm font-semibold text-[#0C447C] mb-2">Decisions & Rationale</div>
+              <div class="space-y-2.5 text-sm text-slate-600">
+                <div class="pl-3 border-l-2 border-[#185FA5]">
+                  <div class="font-medium">Switched from REST to tRPC</div>
+                  <div class="text-slate-500 text-xs">Type safety end-to-end. Simpler DX for a solo founder.</div>
                 </div>
-                <div>
-                  <div class="font-semibold">Onboarding: email-first, not social auth</div>
-                  <div class="text-slate-500">Rationale: Devs distrust OAuth popups. Email + magic link converts 2x better.</div>
+                <div class="pl-3 border-l-2 border-[#185FA5]">
+                  <div class="font-medium">Onboarding: email-first, not social auth</div>
+                  <div class="text-slate-500 text-xs">Devs distrust OAuth popups. Email + magic link converts 2x better.</div>
                 </div>
-                <div>
-                  <div class="font-semibold">Ship free tier before Pro</div>
-                  <div class="text-slate-500">Rationale: Trust and adoption > early revenue.</div>
-                </div>
-                <div>
-                  <div class="font-semibold">Drizzle ORM instead of Prisma</div>
-                  <div class="text-slate-500">Rationale: Prisma cold starts 2-3s on serverless.</div>
-                </div>
-              </div>
-            </div>
-            <div class="mb-5">
-              <div class="text-[#185FA5] font-semibold mb-2">## Rejected Approaches</div>
-              <div class="ml-3 space-y-2.5">
-                <div>
-                  <div class="font-semibold">Prisma ORM</div>
-                  <div class="text-slate-500">Binary dep caused 2-3s cold starts on Vercel.</div>
-                </div>
-                <div>
-                  <div class="font-semibold">Multi-step onboarding wizard</div>
-                  <div class="text-slate-500">40% drop-off at step 2. Replaced with single-screen.</div>
+                <div class="pl-3 border-l-2 border-[#185FA5]">
+                  <div class="font-medium">Ship free tier before Pro</div>
+                  <div class="text-slate-500 text-xs">Trust and adoption matter more than early revenue.</div>
                 </div>
               </div>
             </div>
             <div>
-              <div class="text-[#185FA5] font-semibold mb-2">## Open Questions</div>
-              <div class="ml-3 space-y-1">
-                <div><span class="text-red-500 font-bold">[BLOCKING]</span> Drizzle push or migrate for prod?</div>
-                <div><span class="text-slate-400">[non-blocking]</span> Show usage analytics to free users?</div>
-                <div><span class="text-slate-400">[non-blocking]</span> Hero: illustration vs terminal screenshot?</div>
+              <div class="text-sm font-semibold text-[#0C447C] mb-2">Dead Ends</div>
+              <div class="space-y-2.5 text-sm text-slate-600">
+                <div class="pl-3 border-l-2 border-slate-300">
+                  <div class="font-medium">Prisma ORM</div>
+                  <div class="text-slate-500 text-xs">Binary dep caused 2-3s cold starts on Vercel.</div>
+                </div>
+                <div class="pl-3 border-l-2 border-slate-300">
+                  <div class="font-medium">Multi-step onboarding wizard</div>
+                  <div class="text-slate-500 text-xs">40% drop-off at step 2. Replaced with single screen.</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-[#0C447C] mb-2">Open Questions</div>
+              <div class="space-y-1.5 text-sm">
+                <div class="flex gap-2 items-start">
+                  <span class="text-xs font-bold text-red-500 mt-0.5 shrink-0">BLOCKING</span>
+                  <span class="text-slate-600">Drizzle push or migrate for production?</span>
+                </div>
+                <div class="flex gap-2 items-start">
+                  <span class="text-xs text-slate-400 mt-0.5 shrink-0">optional</span>
+                  <span class="text-slate-600">Show usage analytics to free users?</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <p class="text-xs text-slate-400 mt-2">Committed to your repo — portable across tools and machines</p>
+        <p class="text-xs text-slate-400 mt-2">Portable across tools and machines — lives in your repo</p>
       </div>
     </div>
   </div>
